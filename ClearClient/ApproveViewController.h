@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ApproveViewController : UIViewController
+@property (nonatomic, retain) IBOutlet UILabel *stepLabel;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UIButton *signButton;
+@property (nonatomic, retain) IBOutlet UIButton *doneButton;
+
+- (IBAction)signButtonTapped:(id)sender;
+- (IBAction)doneButtonTapped:(id)sender;
 
 @end

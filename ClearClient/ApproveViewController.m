@@ -7,6 +7,7 @@
 //
 
 #import "ApproveViewController.h"
+#import "AppController.h"
 
 @interface ApproveViewController ()
 
@@ -14,9 +15,30 @@
 
 @implementation ApproveViewController
 
+- (IBAction)signButtonTapped:(id)sender {
+    
+}
+
+- (IBAction)doneButtonTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    AppController *app = [AppController sharedManager];
+    self.signButton.hidden = app.step1Complete;
+    self.doneButton.hidden = !app.step1Complete;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.stepLabel.font = [UIFont fontWithName:@"Archer-Bold" size:20.0];
+
+    //self.textView.font = [UIFont fontWithName:@"Archer-Medium" size:16.0];
+
+    [AppController styleDefaultButton:self.signButton];
+    [AppController styleDefaultButton:self.doneButton];
+
 }
 
 - (void)didReceiveMemoryWarning {

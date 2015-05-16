@@ -7,6 +7,7 @@
 //
 
 #import "HIPAAViewController.h"
+#import "AppController.h"
 
 @interface HIPAAViewController ()
 
@@ -14,9 +15,21 @@
 
 @implementation HIPAAViewController
 
+- (IBAction)switchChanged:(id)sender {
+    AppController *app = [AppController sharedManager];
+    app.step2Complete = self.approveSwitch.on;
+}
+
+- (IBAction)doneButtonTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.stepLabel.font = [UIFont fontWithName:@"Archer-Bold" size:20.0];    
+    [AppController styleDefaultButton:self.doneButton];
+    
 }
 
 - (void)didReceiveMemoryWarning {

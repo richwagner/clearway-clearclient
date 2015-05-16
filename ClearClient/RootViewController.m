@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AppController.h"
 
 @interface RootViewController ()
 
@@ -19,11 +20,8 @@
     [super viewDidLoad];
 
     self.welcomeLabel.font = [UIFont fontWithName:@"Archer-Bold" size:24.0];
-    self.getStaredButton.titleLabel.font = [UIFont fontWithName:@"Novecentowide-Bold" size:17.0];
-    self.getStaredButton.layer.borderWidth = 1;
-    self.getStaredButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.getStaredButton.layer.cornerRadius = 5;
-
+    
+    [AppController styleDefaultButton:self.getStaredButton];
 }
 
 - (void)didReceiveMemoryWarning {

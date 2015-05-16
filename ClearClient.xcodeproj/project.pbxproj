@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0470441B0782D800A6E316 /* SignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0470431B0782D800A6E316 /* SignatureView.m */; };
+		4C0470471B0782F300A6E316 /* DigitalSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0470461B0782F300A6E316 /* DigitalSignViewController.m */; };
+		4C04704D1B07B2A800A6E316 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C04704C1B07B2A800A6E316 /* AppController.m */; };
 		4C1B31D31AAFA82200C20C73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31D21AAFA82200C20C73 /* main.m */; };
 		4C1B31D61AAFA82200C20C73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31D51AAFA82200C20C73 /* AppDelegate.m */; };
 		4C1B31D91AAFA82200C20C73 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B31D81AAFA82200C20C73 /* RootViewController.m */; };
@@ -53,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0470421B0782D800A6E316 /* SignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureView.h; sourceTree = "<group>"; };
+		4C0470431B0782D800A6E316 /* SignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureView.m; sourceTree = "<group>"; };
+		4C0470451B0782F300A6E316 /* DigitalSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitalSignViewController.h; sourceTree = "<group>"; };
+		4C0470461B0782F300A6E316 /* DigitalSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitalSignViewController.m; sourceTree = "<group>"; };
+		4C04704B1B07B2A800A6E316 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		4C04704C1B07B2A800A6E316 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		4C1B31CD1AAFA82200C20C73 /* ClearClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1B31D11AAFA82200C20C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1B31D21AAFA82200C20C73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +133,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0470411B0782C100A6E316 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				4C0470421B0782D800A6E316 /* SignatureView.h */,
+				4C0470431B0782D800A6E316 /* SignatureView.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		4C0470481B07ABD700A6E316 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C04704B1B07B2A800A6E316 /* AppController.h */,
+				4C04704C1B07B2A800A6E316 /* AppController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4C1B31C41AAFA82200C20C73 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +235,8 @@
 				4C8879861B043B3E00D56F67 /* MenuViewController.m */,
 				4C8879881B043B5B00D56F67 /* ApproveViewController.h */,
 				4C8879891B043B5B00D56F67 /* ApproveViewController.m */,
+				4C0470451B0782F300A6E316 /* DigitalSignViewController.h */,
+				4C0470461B0782F300A6E316 /* DigitalSignViewController.m */,
 				4C88798B1B043B6E00D56F67 /* HIPAAViewController.h */,
 				4C88798C1B043B6E00D56F67 /* HIPAAViewController.m */,
 				4C88798E1B043B8900D56F67 /* YouViewController.h */,
@@ -222,7 +251,9 @@
 		4C1B31F91AAFA8F100C20C73 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4C0470481B07ABD700A6E316 /* Controllers */,
 				4C1B31F81AAFA8E300C20C73 /* View Controllers */,
+				4C0470411B0782C100A6E316 /* Library */,
 				4C1B31F71AAFA8C800C20C73 /* AppDelegate */,
 			);
 			name = Classes;
@@ -382,9 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0470441B0782D800A6E316 /* SignatureView.m in Sources */,
+				4C04704D1B07B2A800A6E316 /* AppController.m in Sources */,
 				4C21688F1B02F3A900318AEB /* YourReasonViewController.m in Sources */,
 				4C1B31D91AAFA82200C20C73 /* RootViewController.m in Sources */,
 				4C2168931B02F3C500318AEB /* YourHealthViewController.m in Sources */,
+				4C0470471B0782F300A6E316 /* DigitalSignViewController.m in Sources */,
 				4C2168991B02F3F700318AEB /* YourIntentionViewController.m in Sources */,
 				4C8879901B043B8900D56F67 /* YouViewController.m in Sources */,
 				4C1B31D61AAFA82200C20C73 /* AppDelegate.m in Sources */,

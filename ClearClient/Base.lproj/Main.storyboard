@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Ww-iW-Lhd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -38,6 +38,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.72549019607843135" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aMh-hJ-AOM"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
@@ -47,7 +48,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-177"/>
+            <point key="canvasLocation" x="1134" y="-177"/>
+        </scene>
+        <!--Digital Sign View Controller-->
+        <scene sceneID="Ozr-Cz-erR">
+            <objects>
+                <viewController id="X55-2a-v5Y" customClass="DigitalSignViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SoR-Bk-V89"/>
+                        <viewControllerLayoutGuide type="bottom" id="hDM-9d-4Sy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jim-Hv-kPF">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="90" translatesAutoresizingMaskIntoConstraints="NO" id="WOw-tZ-pAc" userLabel="Signature View 1" customClass="SignatureView">
+                                <rect key="frame" x="77" y="200" width="871" height="307"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="SaA-pY-Ccw"/>
+                                    <constraint firstAttribute="width" constant="280" id="Znh-p8-whO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SaA-pY-Ccw"/>
+                                        <exclude reference="Znh-p8-whO"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQJ-wW-NR9">
+                                <rect key="frame" x="77" y="613" width="246" height="44"/>
+                                <state key="normal" title="Clear Signature">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signatureClearTapped:" destination="X55-2a-v5Y" eventType="touchUpInside" id="iai-KQ-CtF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4Y-Iz-k1l">
+                                <rect key="frame" x="727" y="620" width="221" height="44"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signatureSignTapped:" destination="X55-2a-v5Y" eventType="touchUpInside" id="MGV-wg-nRP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please sign your digital signature by signing your name with your finger in the white space above." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-qJ-q23">
+                                <rect key="frame" x="77" y="525" width="871" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tR-jK-wrP">
+                                <rect key="frame" x="77" y="70" width="871" height="74"/>
+                                <string key="text">I have read and understood the disclaimer and hereby authorize the staff of Clearway Clinic to render wharever services are necessary for my care. I understand that Clearway Clinic will contact me with all medical results.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.72549019609999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="clearButton" destination="cQJ-wW-NR9" id="GA1-Dn-xPH"/>
+                        <outlet property="instructionsLabel" destination="TGJ-qJ-q23" id="QQE-6a-Hu4"/>
+                        <outlet property="signButton" destination="e4Y-Iz-k1l" id="bdv-bR-Hbs"/>
+                        <outlet property="signatureView" destination="WOw-tZ-pAc" id="3Ka-bj-1uO"/>
+                        <outlet property="stepLabel" destination="6tR-jK-wrP" id="HUo-vz-hFo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XcN-Yx-a4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="-2048"/>
         </scene>
         <!--Approve View Controller-->
         <scene sceneID="hWe-R6-FwX">
@@ -60,10 +137,86 @@
                     <view key="view" contentMode="scaleToFill" id="7RN-f3-wi3">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1: Please read the following disclaimer thoroughly. When done, tap the button below.   " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-1N-SOq">
+                                <rect key="frame" x="61" y="20" width="902" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-Fe-tVM">
+                                <rect key="frame" x="61" y="97" width="902" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">All Services are Free, Confidential, No Insurance Billing 
+• Pregnancy Test  
+• Limited Obstetrical Ultrasound 
+• 1 on 1 Personal Pregnancy Options Consultation 
+• STI Testing (for Chlamydia &amp; Gonorrhea)
+• Community Referrals for additional care: medical, housing, other agencies, insurance, etc 
+
+Please read carefully the following Disclaimer:
+
+• This facility is a non-profit medical clinic. We provide you situational assessment and personalized pregnancy options consultation.
+• The medical services are provided by licensed medical professionals, some may be volunteers. 
+• Our medical services are diagnostic; we will refer you for all further medical care. 
+• Clearway does not profit from your decision
+• All information is kept confidential except if child abuse reporting laws apply or if we believe or hear that you are in danger of hurting yourself or others.
+• Our Clinic does not perform or refer for abortion. 
+• Our client advocates are volunteers. They are not licensed or degreed personnel. The advocacy obtained here is not intended as a substitute for professional counseling. 
+• Clearway does not consent to any type of recording, taping or videotaping. 
+
+WHAT CAN YOU EXPECT?
+
+• You will meet first with a Client Advocate and then a Nurse who will:
+• Complete initial assessment and review your options to determine support needed from Clearway.
+• Perform a pregnancy test. If positive, the nurse will complete a Reproductive Health Screening to review your health history and answer your medical questions.
+• When indicated by set medical criteria, perform an ultrasound to confirm pregnancy &amp; gestational age
+• If STI Testing is requested, collect a urine sample and provide information about STIs.
+• By law, STI results can only be given in person, therefore a follow up appointment is required.
+Provide any necessary medical referrals
+
+PRIVACY POLICY
+
+Clearway encourages the support of friends and family during your appointment. Please note that in an effort to provide the highest quality of care, your clinical visit will begin without any guests. With your permission, we will invite friends &amp; family in for the remainder of your visit. Patients having an ultrasound exam may choose to invite guests to join them for that portion of their visit. 
+
+
+
+</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SN-9b-vlu">
+                                <rect key="frame" x="596" y="695" width="367" height="44"/>
+                                <state key="normal" title="Tap here to sign your consent">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signButtonTapped:" destination="dam-vm-wox" eventType="touchUpInside" id="ceM-vw-lYC"/>
+                                    <segue destination="X55-2a-v5Y" kind="show" id="9ax-6J-h0V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPa-xb-CGS">
+                                <rect key="frame" x="671" y="695" width="292" height="44"/>
+                                <state key="normal" title="Return to Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="dam-vm-wox" eventType="touchUpInside" id="4PE-kd-vWM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.72549019609999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="doneButton" destination="SPa-xb-CGS" id="2g7-dV-1ar"/>
+                        <outlet property="signButton" destination="1SN-9b-vlu" id="Mvq-3p-ShL"/>
+                        <outlet property="stepLabel" destination="HDC-1N-SOq" id="wbp-is-J1W"/>
+                        <outlet property="textView" destination="qK8-Fe-tVM" id="dYX-BO-IO1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnc-tK-rZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULe-tX-zYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="-153"/>
+            <point key="canvasLocation" x="3686" y="-153"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="BVA-o3-aGL">
@@ -102,37 +255,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zN-jU-3Tr">
-                                <rect key="frame" x="91" y="318" width="185" height="30"/>
-                                <state key="normal" title="Authorize Services">
+                                <rect key="frame" x="54" y="446" width="259" height="30"/>
+                                <state key="normal" title="Step 1: Authorize Services">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dam-vm-wox" kind="show" id="b0S-RN-c89"/>
+                                    <segue destination="dam-vm-wox" kind="show" identifier="Step1Segue" id="b0S-RN-c89"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ac-pk-Xe1">
-                                <rect key="frame" x="344" y="318" width="185" height="30"/>
-                                <state key="normal" title="Read HIPAA Privacy">
+                                <rect key="frame" x="336" y="446" width="344" height="30"/>
+                                <state key="normal" title="Step 2: Read HIPAA Privacy">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Fpv-ma-CH2" kind="show" id="RT3-pJ-Py3"/>
+                                    <segue destination="Fpv-ma-CH2" kind="show" identifier="Step2Segue" id="RT3-pJ-Py3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Am-kt-eri">
-                                <rect key="frame" x="565" y="318" width="185" height="30"/>
-                                <state key="normal" title="Tell Us About Yourself">
+                                <rect key="frame" x="659" y="446" width="329" height="30"/>
+                                <state key="normal" title="Step 3: Tell Us About Yourself">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mRZ-cu-3YH" kind="show" id="TNz-Lc-Stb"/>
+                                    <segue destination="mRZ-cu-3YH" kind="show" identifier="Step3Segue" id="TNz-Lc-Stb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-nh-aXl">
-                                <rect key="frame" x="798" y="318" width="185" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-nh-aXl">
+                                <rect key="frame" x="778" y="695" width="185" height="30"/>
                                 <state key="normal" title="Tell Us How We Did">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,15 +294,40 @@
                                     <segue destination="RPW-bg-6Bq" kind="show" id="TTZ-og-YbU"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TaskIncomplete" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-Iu-9ea">
+                                <rect key="frame" x="118" y="292" width="131" height="130"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TaskIncomplete" translatesAutoresizingMaskIntoConstraints="NO" id="apd-pz-6cD">
+                                <rect key="frame" x="442" y="292" width="131" height="130"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TaskIncomplete" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-GH-hZu">
+                                <rect key="frame" x="758" y="292" width="131" height="130"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-i5-yzP">
+                                <rect key="frame" x="91" y="79" width="834" height="119"/>
+                                <string key="text">Welcome to Clearway Clinic. While you are waiting for your appointment, we first need you to fill out a little paperwork for us so we can treat you today. Tap each step below and then follow instructions to complete.   </string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.72549019609999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="step1Button" destination="5zN-jU-3Tr" id="3dC-Bg-SHQ"/>
+                        <outlet property="step1ImageView" destination="1jn-Iu-9ea" id="JVD-Fz-nkq"/>
+                        <outlet property="step2Button" destination="1Ac-pk-Xe1" id="8DJ-f7-aXC"/>
+                        <outlet property="step2ImageView" destination="apd-pz-6cD" id="Ver-XA-qFp"/>
+                        <outlet property="step3Button" destination="2Am-kt-eri" id="gXN-YD-j0a"/>
+                        <outlet property="step3ImageView" destination="yYf-GH-hZu" id="fLh-7T-Jc9"/>
+                        <outlet property="welcomeLabel" destination="A0k-i5-yzP" id="evH-Ay-zWl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljB-1F-eeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536" y="-177"/>
+            <point key="canvasLocation" x="2348" y="-177"/>
         </scene>
         <!--You View Controller-->
         <scene sceneID="Oyd-Q7-hc8">
@@ -438,7 +616,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxU-Ql-5K9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5209" y="-473"/>
+            <point key="canvasLocation" x="6021" y="-473"/>
         </scene>
         <!--Your Background View Controller-->
         <scene sceneID="i01-n4-zCx">
@@ -580,7 +758,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnW-ti-N6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5209" y="434"/>
+            <point key="canvasLocation" x="6021" y="434"/>
         </scene>
         <!--Your Reason View Controller-->
         <scene sceneID="wpz-JT-owl">
@@ -777,7 +955,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6um-US-EGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6288" y="-416"/>
+            <point key="canvasLocation" x="7100" y="-416"/>
         </scene>
         <!--Your Health View Controller-->
         <scene sceneID="V1w-ZY-Nbk">
@@ -903,7 +1081,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1u-wY-hEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6263" y="489"/>
+            <point key="canvasLocation" x="7075" y="489"/>
         </scene>
         <!--Your Relationship View Controller-->
         <scene sceneID="4VI-5b-pi6">
@@ -1109,7 +1287,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9D-aO-gfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7379" y="-423"/>
+            <point key="canvasLocation" x="8191" y="-423"/>
         </scene>
         <!--Your Intention View Controller-->
         <scene sceneID="L7n-sU-pGz">
@@ -1247,7 +1425,7 @@ Let's start with your name.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRx-Iq-tNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7506" y="470"/>
+            <point key="canvasLocation" x="8318" y="470"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gjG-yd-ngR">
@@ -1260,18 +1438,118 @@ Let's start with your name.</string>
                     <view key="view" contentMode="scaleToFill" id="mie-O3-C1O">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 2: Please read the following Privacy Practices HIPPA. When done, tap the switch below to show your consent.  " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrf-Nt-HpX">
+                                <rect key="frame" x="61" y="20" width="902" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsE-GA-kXT">
+                                <rect key="frame" x="61" y="97" width="902" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">NOTICE OF PRIVACY PRACTICES HIPAA					
+I. BECAUSE WE ARE A MEDICAL CARE PROVIDER PROVIDING PREGNANCY TEST, STI TEST AND LIMITED ULTRASOUND, THAT DOES NOT ENGAGE IN ANY TRANSACTIONS THAT INVOKE COVERAGE OF THE HIPAA PRIVACY ACT, THE PRIVACY PRACTICES AND TERMS DESCRIBED IN THIS NOTICE ARE VOLUNTARILY UNDERTAKEN. THEREFORE, NOTHING IN THIS NOTICE SHOULD BE CONSTRUED AS CREATING ANY CONTRACTUAL OR LEGAL RIGHTS ON BEHALF OF CLIENTS. WE RESERVE THE RIGHT TO MODIFY OUR PRIVACY PRACTICES AND THIS NOTICE AT ANY TIME.  
+
+II. Safeguarding Your Protected Health Information
+Individually identifiable information about your past, present, or future health or condition, the provision of health care to you, or payment for health care is considered "Protected Health Information" (PHI). We will extend certain protections to your PHI. This Notice explains how, when and why we may use or disclose your PHI. Except in specified circumstances, we will only use or disclose the minimum necessary PHI to accomplish the intended purpose of the use or disclosure.
+
+III. How We May Use and Disclose Your Protected Health Information
+We use and disclose PHI for a variety of reasons. We may use and/or disclose your PHI for purposes of treatment or our health care operations. For uses beyond that, we will ordinarily obtain your written authorization. The following offers more description and some examples of the potential uses and disclosures of your PHI:
+
+Uses and Disclosures Relating to Treatment or Health Care Operations. 
+We may disclose your PHI to doctors, nurses and other health care personnel who are involved in providing your health care. Your PHI may be shared with outside entities performing ancillary services to your treatment. Also, we may use and/or, disclose your PHI as may be reasonably necessary in the course of operating our medical help clinic. We may also send or communicate appointment reminders but subject to our normal confidentiality policies and any special instructions that you have given.
+
+Uses and Disclosures for Which Special Authorization Will be Sought.
+For uses beyond treatment and operations purposes, we will ordinarily seek to obtain your authorization before disclosing your PHI. However, disclosure of your PHI may be made without your consent or authorization when required by law, when required for public health reasons, when necessary to avert a threat of harm to you or a third person, or when other circumstances may require or reasonably warrant such disclosure.
+
+IV. How You May Have Access to or Control of Your Protected Health Information. 
+The following is a description of the steps you may take to access or to otherwise control the disposition of your PHI:
+
+
+
+
+
+To request restrictions on uses/disclosures: 
+You may ask that we limit how we use or disclose your PHI. We will consider your request, but we are not legally bound to agree to the restriction. To the extent that we do agree to such restrictions, we will abide by such restrictions except in emergency situations. We cannot agree to limit uses/disclosures that are required by law.
+
+To choose how we contact you: 
+You may ask that we send you information at an alternative address or by alternative means. We will agree to your request so long as it is reasonably easy for us to do so.
+
+To inspect and copy your PHI: 
+Unless your access is restricted for clear and documented treatment reasons, you will be permitted to inspect your protected health information upon written request. We will respond to your request within 30 days. If we deny your request for access, we will give you written reasons for the denial. If you want copies of your PHI, we will make reasonable efforts to accommodate any such request. You may designate selected portions of your PHI for copying.
+
+To request amendment of your PHI: 
+If you believe that there is a mistake or missing information in our record of your PHI, you may request in writing that we correct or add to the record. We will respond within 60 days of receiving your request. Any denial will state the reasons for the denial. If we approve the request for amendment, we will change the PHI and so inform you. We will also inform any others who have a need to know about such changes.
+
+To find out what disclosures have been made: 
+You may request for us to provide you with a list of all disclosures of your PHI which we have made except for such disclosures as have been made in connection with your treatment, our health care operations, or as specifically required by law. We will respond to your request within 60 days of receiving it.
+</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZmV-P7-I1K">
+                                <rect key="frame" x="61" y="709" width="51" height="31"/>
+                                <color key="onTintColor" red="0.83137254900000002" green="0.95294117649999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="Fpv-ma-CH2" eventType="touchUpInside" id="zWM-o8-jQQ"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I have read the HIPPA notice and consent to it. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8L-fb-UCP">
+                                <rect key="frame" x="126" y="714" width="363" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ2-Pj-bdd">
+                                <rect key="frame" x="671" y="703" width="292" height="44"/>
+                                <state key="normal" title="Return to Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="Fpv-ma-CH2" eventType="touchUpInside" id="VdX-bH-WgH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.72549019609999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="approveSwitch" destination="ZmV-P7-I1K" id="MBs-Uv-6Ob"/>
+                        <outlet property="doneButton" destination="uQ2-Pj-bdd" id="xH6-XW-K3m"/>
+                        <outlet property="stepLabel" destination="vrf-Nt-HpX" id="MuU-SA-YEH"/>
+                        <outlet property="switchLabel" destination="q8L-fb-UCP" id="iIF-Pv-vJj"/>
+                        <outlet property="textView" destination="nsE-GA-kXT" id="bsh-co-Aiw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEd-Tc-7vw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="-1224"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="laI-60-bB7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8Ww-iW-Lhd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9A-m4-UvI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jp3-AW-gxL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6d-zD-cz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="-187"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CircleStep" width="45" height="45"/>
         <image name="Logo" width="580" height="217"/>
+        <image name="TaskIncomplete" width="131" height="130"/>
     </resources>
 </document>
