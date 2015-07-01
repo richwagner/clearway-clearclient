@@ -49,11 +49,11 @@
     }
 
 
-    if (app.step2Complete) {
-        self.step2ImageView.image = [UIImage imageNamed:@"TaskComplete"];
+    if (app.step3Complete) {
+        self.step3ImageView.image = [UIImage imageNamed:@"TaskComplete"];
     }
     else {
-        self.step2ImageView.image = [UIImage imageNamed:@"TaskIncomplete"];
+        self.step3ImageView.image = [UIImage imageNamed:@"TaskIncomplete"];
     }
 
 }

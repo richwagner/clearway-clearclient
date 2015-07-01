@@ -16,6 +16,12 @@
 @property (nonatomic, assign) BOOL step3Complete;
 
 + (void)styleDefaultButton:(UIButton*)button;
++ (UIColor *)hexColor:(NSString *)hexString;
++ (void)styleSegmentedControls:(UIView *)view;
++ (void)styleTextFields:(UIView *)view;
++ (void)styleLabels:(UIView *)view withFontname:(NSString *)fontName withFontSize:(CGFloat)fontSize;
++ (void)styleAllControls:(UIView *)view;
++ (void)styleTaggedLabels:(UIView *)view withFontname:(NSString *)fontName withTag:(NSInteger)tag;
 
 + (id)sharedManager;
 @end

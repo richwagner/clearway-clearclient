@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>ADD94488-716B-478C-B98E-3B3A9876D74C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ClearClient</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>DD84FCB0D4D2E7B606668620487D06C0425823CF</key>
 		<string>https://github.com/richwagner/clearway-clearclient.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ClearClient.xcodeproj</string>
+	<string>ClearClient.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>DD84FCB0D4D2E7B606668620487D06C0425823CF</key>
