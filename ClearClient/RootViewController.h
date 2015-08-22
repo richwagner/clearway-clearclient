@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
+@interface RootViewController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UILabel *welcomeLabel;
 @property (nonatomic, retain) IBOutlet UIButton *getStaredButton;
+@property (nonatomic, retain) IBOutlet UIButton *createClientButton;
 
 @end
 

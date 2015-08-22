@@ -16,15 +16,24 @@
 @implementation MenuViewController
 
 - (IBAction)step1Tapped:(id)sender {
-    [self performSegueWithIdentifier:@"Step1Segue" sender:sender];
+    AppController *app = [AppController sharedManager];
+    if (!app.step1Complete) {
+        [self performSegueWithIdentifier:@"Step1Segue" sender:sender];
+    }
 }
 
 - (IBAction)step2Tapped:(id)sender {
-    [self performSegueWithIdentifier:@"Step2Segue" sender:sender];
+    AppController *app = [AppController sharedManager];
+    if (!app.step2Complete) {
+        [self performSegueWithIdentifier:@"Step2Segue" sender:sender];
+    }
 }
 
 - (IBAction)step3Tapped:(id)sender {
-    [self performSegueWithIdentifier:@"Step3Segue" sender:sender];
+    AppController *app = [AppController sharedManager];
+    if (!app.step3Complete) {
+        [self performSegueWithIdentifier:@"Step3Segue" sender:sender];
+    }
 }
 
 
@@ -55,11 +64,20 @@
     else {
         self.step3ImageView.image = [UIImage imageNamed:@"TaskIncomplete"];
     }
+    
+    if (app.step1Complete && app.step2Complete && app.step3Complete) {
+        self.completedLabel.hidden = NO;
+    }
+    else {
+        self.completedLabel.hidden = YES;
+    }
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
     self.welcomeLabel.font = [UIFont fontWithName:@"Archer-Bold" size:24.0];
     self.step1Button.titleLabel.font = [UIFont fontWithName:@"Novecentowide-Medium" size:15.0];
     self.step2Button.titleLabel.font = [UIFont fontWithName:@"Novecentowide-Medium" size:15.0];

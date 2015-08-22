@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *step1ImageView;
 @property (nonatomic, retain) IBOutlet UIImageView *step2ImageView;
 @property (nonatomic, retain) IBOutlet UIImageView *step3ImageView;
+@property (nonatomic, retain) IBOutlet UILabel *completedLabel;
 
 - (IBAction)step1Tapped:(id)sender;
 - (IBAction)step2Tapped:(id)sender;

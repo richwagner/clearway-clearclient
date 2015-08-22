@@ -8,6 +8,12 @@
 
 #import "YouViewController.h"
 #import "AppController.h"
+#import "CCClient.h"
+#import "SalesForceController.h"
+#import <SHEmailValidator.h>
+#import <SHEmailValidationTextField.h>
+#import <IQDropDownTextField.h>
+#import "IQKeyboardManager.h"
 
 #define LAST_PAGE_INDEX 5
 
@@ -23,6 +29,152 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
 
 @implementation YouViewController
 
+- (void)setupFields {
+
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [toolbar setBarStyle:UIBarStyleDefault];
+    [toolbar sizeToFit];
+    UIBarButtonItem *buttonflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *buttonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneClicked:)];
+    [toolbar setItems:[NSArray arrayWithObjects:buttonflexible,buttonDone, nil]];
+    
+    self.stateField.itemList = [NSArray arrayWithObjects:@"MA", @"CT", @"ME", @"VT", nil];
+    self.stateField.inputAccessoryView = toolbar;
+    self.stateField.isOptionalDropDown = NO;
+    self.countryField.itemList = [NSArray arrayWithObjects:@"USA", @"Canada", @"Mexico", @"El Salvador", nil];
+    self.countryField.isOptionalDropDown = NO;
+    self.countryField.inputAccessoryView = toolbar;
+    self.emergencyContactRelationship.itemList = [NSArray arrayWithObjects:@"Mother", @"Father", @"Sister", @"Brother", @"Other", nil];
+    self.emergencyContactRelationship.isOptionalDropDown = NO;
+    self.emergencyContactRelationship.inputAccessoryView = toolbar;
+    self.fatherAgeField.itemList = [NSArray arrayWithObjects:@"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", nil];
+    self.fatherAgeField.isOptionalDropDown = NO;
+    self.fatherAgeField.inputAccessoryView = toolbar;
+    self.fatherFuturePlansField.itemList = [NSArray arrayWithObjects:@"Yes", @"No", @"Unsure", nil];
+    self.fatherFuturePlansField.isOptionalDropDown = NO;
+    self.fatherFuturePlansField.inputAccessoryView = toolbar;
+    self.fatherPregnancyKnowledgeField.itemList = [NSArray arrayWithObjects:@"Yes", @"No", @"Unsure", nil];
+    self.fatherPregnancyKnowledgeField.isOptionalDropDown = NO;
+    self.fatherPregnancyKnowledgeField.inputAccessoryView = toolbar;
+    self.fatherInvolvedDecisionField.itemList = [NSArray arrayWithObjects:@"Yes", @"No", @"Unsure", nil];
+    self.fatherInvolvedDecisionField.isOptionalDropDown = NO;
+    self.fatherInvolvedDecisionField.inputAccessoryView = toolbar;
+
+    self.deliveriesField.itemList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", nil];
+    self.deliveriesField.isOptionalDropDown = NO;
+    self.deliveriesField.inputAccessoryView = toolbar;
+
+    self.miscarriagesField.itemList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", nil];
+    self.miscarriagesField.isOptionalDropDown = NO;
+    self.miscarriagesField.inputAccessoryView = toolbar;
+
+    self.abortionsField.itemList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", nil];
+    self.abortionsField.isOptionalDropDown = NO;
+    self.abortionsField.inputAccessoryView = toolbar;
+    self.abortionsField.delegate = self; 
+    
+    [self.phoneField.formatter setDefaultOutputPattern:@"(###) ###-####"];
+    [self.emergencyContactPhone.formatter setDefaultOutputPattern:@"(###) ###-####"];
+    [self.birthdateField.formatter setDefaultOutputPattern:@"##/##/####"];
+    
+    
+}
+
+-(void)doneClicked:(UIBarButtonItem*)button {
+    [self.view endEditing:YES];
+}
+
+
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    if (textField == self.emailField) {
+        [self validateEmail]; 
+    }
+    
+    
+}
+
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item {
+
+    if (textField == self.abortionsField) {
+        if (![self.abortionsField.text isEqualToString:@"0"]) {
+            self.abortionView.hidden = NO;
+        }
+        else {
+            self.abortionView.hidden = YES;
+        }
+    
+    }
+    
+    
+}
+
+
+- (void)validateEmail {
+    
+    NSError *error = nil;
+    [[SHEmailValidator validator] validateSyntaxOfEmailAddress:self.emailField.text withError:&error];
+    
+    if (error) {
+        // An error occurred
+        switch (error.code) {
+            case SHBlankAddressError:
+                // Input was empty
+                break;
+            case SHInvalidSyntaxError:
+                // Syntax completely wrong (probably missing @ or .)
+                break;
+            case SHInvalidUsernameError:
+                // Local portion of the email address is empty or contains invalid characters
+                break;
+            case SHInvalidDomainError:
+                // Domain portion of the email address is empty or contains invalid characters
+                break;
+            case SHInvalidTLDError:
+                // TLD portion of the email address is empty, contains invalid characters, or is under 2 characters long
+                break;
+        }
+    } else {
+        // Basic email syntax is correct
+    }
+}
+
+
+
+//===========================================================
+//  Client data
+//===========================================================
+
+#pragma mark - Client data 
+
+- (void)saveClientRecordToSF {
+    CCClient *client = [[SalesForceController sharedManager] currentClient];
+    if (client) {
+        client.firstName = self.firstNameField.text;
+        client.lastName = self.lastNameField.text;
+        client.address = self.addressField.text;
+        client.city = self.cityField.text;
+        client.state = self.stateField.text;
+        client.zipCode = self.zipCodeField.text;
+        client.mobilePhone = self.phoneField.text;
+        client.email = self.emailField.text;
+        [[SalesForceController sharedManager] updateClient];
+    }
+}
+
 
 //===========================================================
 //  Event handlers
@@ -30,9 +182,39 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
 
 #pragma mark - Event handlers 
 
+- (IBAction)previousPregnanciesChangeHandler:(id)sender {
+    if (self.pregnancyBeforeSwitch.on) {
+        self.pregnancyView.hidden = NO;
+    }
+    else {
+        self.pregnancyView.hidden = YES;
+    }
+}
+
+- (IBAction)safeToContactChangeHandler:(id)sender {
+    if (self.safeToContactSwitch.on) {
+        self.safeToContactLabel.text = @"Yes, it is.";
+    }
+    else {
+        self.safeToContactLabel.text = @"No, please do not.";
+    }
+}
+
 - (IBAction)continueTouchHandler:(id)sender {
 
+    if (![self canMoveAway]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Missing Fields", nil)
+                                                        message:@"Please complete the required fields and then hit the Continue button."
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Okay", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+
     self.currentPageIndex++;
+
+    [self saveClientRecordToSF];
 
     if (self.currentPageIndex <= LAST_PAGE_INDEX) {
         [self gotoPage:self.currentPageIndex];
@@ -41,10 +223,21 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
         [self.navigationController popViewControllerAnimated:YES];
     }
 
+
 }
 
 - (IBAction)backTouchHandler:(id)sender {
     
+    if (![self canMoveAway]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Missing Fields", nil)
+                                                        message:@"Please complete the required fields and then hit the Previous button."
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Okay", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+
     self.currentPageIndex--;
     
     if (self.currentPageIndex >=0) {
@@ -61,6 +254,33 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
     [self gotoPage:pageIndex];
 }
 
+- (BOOL)canMoveAway {
+    BOOL result = NO;
+    if (self.currentPageIndex == 0) {
+        int page1Total = [self v:self.firstNameField] + [self v:self.lastNameField] + [self v:self.addressField] +
+                         [self v:self.cityField] + [self v:self.stateField] + [self v:self.zipCodeField] /*+ [self v:self.phoneField] +
+                         [self v:self.emailField]*/;
+        if (page1Total > 0) {
+            result = NO;
+        }
+        else {
+            result = YES;
+        }
+    }
+    else {
+        result = YES;
+    }
+    
+    return result;
+}
+
+- (int)v:(UITextField *)textField {
+    int result = 0;
+    if (!textField.text.length) {
+        result = 1;
+    }
+    return result;
+}
 
 //===========================================================
 //  Page methods
@@ -69,6 +289,7 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
 #pragma mark - Page methods
 
 - (void)gotoPage:(NSInteger)pageIndex {
+
     if (pageIndex <= LAST_PAGE_INDEX) {
         [self.scrollView setContentOffset:CGPointMake([self offsetForPage:pageIndex], 0) animated:YES];
         [self updateUIToPage:pageIndex];
@@ -220,6 +441,9 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+     [[IQKeyboardManager sharedManager] setEnable:YES];
+    
     self.scrollView.contentSize = CGSizeMake(6*PAGE_WIDTH, PAGE_HEIGHT);
     [self positionView:self.step1View atPageIndex:0];
     [self positionView:self.step2View atPageIndex:1];
@@ -246,7 +470,11 @@ NSString *const SELECTED_NAV_TEXT_COLOR = @"D3F3EC";
 
     [AppController styleTaggedLabels:self.step3View withFontname:@"Archer-Medium" withTag:2];
     
+    [self setupFields];
+    
 }
+
+
 
 - (void)styleLabels {
     

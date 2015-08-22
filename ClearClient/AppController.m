@@ -8,6 +8,9 @@
 
 #import "AppController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <IQDropDownTextField.h>
+#import <SHSPhoneTextField.h>
+#import <SHEmailValidationTextField.h>
 
 static AppController *sharedApp = nil;
 
@@ -85,7 +88,10 @@ static AppController *sharedApp = nil;
 + (void)styleTextFields:(UIView *)view {
     
     for (UIView *v in [view subviews]) {
-        if ([v isKindOfClass:[UITextField class]]) {
+        if ([v isKindOfClass:[UITextField class]] ||
+            [v isKindOfClass:[IQDropDownTextField class]] ||
+            [v isKindOfClass:[SHSPhoneTextField class]] ||
+            [v isKindOfClass:[SHEmailValidationTextField class]]) {
             UITextField *textField = (UITextField *)v;
             textField.font = [UIFont fontWithName:@"Archer-Medium" size:textField.font.pointSize];
         

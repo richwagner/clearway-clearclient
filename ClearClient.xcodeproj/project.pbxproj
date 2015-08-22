@@ -38,11 +38,15 @@
 		4C2168931B02F3C500318AEB /* YourHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2168921B02F3C500318AEB /* YourHealthViewController.m */; };
 		4C2168961B02F3E500318AEB /* YourRelationshipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2168951B02F3E500318AEB /* YourRelationshipViewController.m */; };
 		4C2168991B02F3F700318AEB /* YourIntentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2168981B02F3F700318AEB /* YourIntentionViewController.m */; };
+		4C2326DC1B84069A00567D33 /* CCCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2326DB1B84069A00567D33 /* CCCase.m */; };
+		4C5B64491B6D5440008E4B2F /* CCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B64481B6D5440008E4B2F /* CCClient.m */; };
 		4C8879871B043B3E00D56F67 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8879861B043B3E00D56F67 /* MenuViewController.m */; };
 		4C88798A1B043B5B00D56F67 /* ApproveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8879891B043B5B00D56F67 /* ApproveViewController.m */; };
 		4C88798D1B043B6E00D56F67 /* HIPAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C88798C1B043B6E00D56F67 /* HIPAAViewController.m */; };
 		4C8879901B043B8900D56F67 /* YouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C88798F1B043B8900D56F67 /* YouViewController.m */; };
 		4C8879931B043B9900D56F67 /* ExitSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8879921B043B9900D56F67 /* ExitSurveyViewController.m */; };
+		4CE22D2C1B47365A00594391 /* SalesForceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE22D2B1B47365A00594391 /* SalesForceController.m */; };
+		A4584AAC09FBEDE3EBAD108A /* libPods-ClearClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180D9C631DDBC82DB1C79540 /* libPods-ClearClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180D9C631DDBC82DB1C79540 /* libPods-ClearClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClearClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0470421B0782D800A6E316 /* SignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureView.h; sourceTree = "<group>"; };
 		4C0470431B0782D800A6E316 /* SignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureView.m; sourceTree = "<group>"; };
 		4C0470451B0782F300A6E316 /* DigitalSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitalSignViewController.h; sourceTree = "<group>"; };
@@ -102,6 +107,10 @@
 		4C2168951B02F3E500318AEB /* YourRelationshipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourRelationshipViewController.m; sourceTree = "<group>"; };
 		4C2168971B02F3F700318AEB /* YourIntentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourIntentionViewController.h; sourceTree = "<group>"; };
 		4C2168981B02F3F700318AEB /* YourIntentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourIntentionViewController.m; sourceTree = "<group>"; };
+		4C2326DA1B84069A00567D33 /* CCCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCase.h; sourceTree = "<group>"; };
+		4C2326DB1B84069A00567D33 /* CCCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCase.m; sourceTree = "<group>"; };
+		4C5B64471B6D5440008E4B2F /* CCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClient.h; sourceTree = "<group>"; };
+		4C5B64481B6D5440008E4B2F /* CCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClient.m; sourceTree = "<group>"; };
 		4C8879851B043B3E00D56F67 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		4C8879861B043B3E00D56F67 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		4C8879881B043B5B00D56F67 /* ApproveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApproveViewController.h; sourceTree = "<group>"; };
@@ -112,6 +121,10 @@
 		4C88798F1B043B8900D56F67 /* YouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouViewController.m; sourceTree = "<group>"; };
 		4C8879911B043B9900D56F67 /* ExitSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExitSurveyViewController.h; sourceTree = "<group>"; };
 		4C8879921B043B9900D56F67 /* ExitSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitSurveyViewController.m; sourceTree = "<group>"; };
+		4CE22D2A1B47365A00594391 /* SalesForceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesForceController.h; sourceTree = "<group>"; };
+		4CE22D2B1B47365A00594391 /* SalesForceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesForceController.m; sourceTree = "<group>"; };
+		5F242288A465E2F4CA105054 /* Pods-ClearClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearClient/Pods-ClearClient.release.xcconfig"; sourceTree = "<group>"; };
+		BAFEEBF360127292CE4BC9EE /* Pods-ClearClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearClient/Pods-ClearClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C1B32191AAFDD4A00C20C73 /* QuartzCore.framework in Frameworks */,
+				A4584AAC09FBEDE3EBAD108A /* libPods-ClearClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +161,8 @@
 			children = (
 				4C04704B1B07B2A800A6E316 /* AppController.h */,
 				4C04704C1B07B2A800A6E316 /* AppController.m */,
+				4CE22D2A1B47365A00594391 /* SalesForceController.h */,
+				4CE22D2B1B47365A00594391 /* SalesForceController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +174,8 @@
 				4C1B32181AAFDD4A00C20C73 /* QuartzCore.framework */,
 				4C1B31E91AAFA82200C20C73 /* ClearClientTests */,
 				4C1B31CE1AAFA82200C20C73 /* Products */,
+				813495989FA7A93A9EC027D8 /* Pods */,
+				AE22B634E8AB29196F0EEE5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +269,7 @@
 		4C1B31F91AAFA8F100C20C73 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4C5B64461B6D4D66008E4B2F /* Models */,
 				4C0470481B07ABD700A6E316 /* Controllers */,
 				4C1B31F81AAFA8E300C20C73 /* View Controllers */,
 				4C0470411B0782C100A6E316 /* Library */,
@@ -280,6 +299,17 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		4C5B64461B6D4D66008E4B2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C5B64471B6D5440008E4B2F /* CCClient.h */,
+				4C5B64481B6D5440008E4B2F /* CCClient.m */,
+				4C2326DA1B84069A00567D33 /* CCCase.h */,
+				4C2326DB1B84069A00567D33 /* CCCase.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4C8879841B043B1700D56F67 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +329,23 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
+		813495989FA7A93A9EC027D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAFEEBF360127292CE4BC9EE /* Pods-ClearClient.debug.xcconfig */,
+				5F242288A465E2F4CA105054 /* Pods-ClearClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE22B634E8AB29196F0EEE5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				180D9C631DDBC82DB1C79540 /* libPods-ClearClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C1B31F01AAFA82200C20C73 /* Build configuration list for PBXNativeTarget "ClearClient" */;
 			buildPhases = (
+				454DB00BD9051FB5E52D367B /* Check Pods Manifest.lock */,
 				4C1B31C91AAFA82200C20C73 /* Sources */,
 				4C1B31CA1AAFA82200C20C73 /* Frameworks */,
 				4C1B31CB1AAFA82200C20C73 /* Resources */,
+				9AD79647B767B72E17B4FF4D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,6 +457,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		454DB00BD9051FB5E52D367B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9AD79647B767B72E17B4FF4D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClearClient/Pods-ClearClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C1B31C91AAFA82200C20C73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -419,8 +501,10 @@
 				4C1B31D91AAFA82200C20C73 /* RootViewController.m in Sources */,
 				4C2168931B02F3C500318AEB /* YourHealthViewController.m in Sources */,
 				4C0470471B0782F300A6E316 /* DigitalSignViewController.m in Sources */,
+				4CE22D2C1B47365A00594391 /* SalesForceController.m in Sources */,
 				4C2168991B02F3F700318AEB /* YourIntentionViewController.m in Sources */,
 				4C8879901B043B8900D56F67 /* YouViewController.m in Sources */,
+				4C2326DC1B84069A00567D33 /* CCCase.m in Sources */,
 				4C1B31D61AAFA82200C20C73 /* AppDelegate.m in Sources */,
 				4C8879931B043B9900D56F67 /* ExitSurveyViewController.m in Sources */,
 				4C1B31D31AAFA82200C20C73 /* main.m in Sources */,
@@ -428,6 +512,7 @@
 				4C88798A1B043B5B00D56F67 /* ApproveViewController.m in Sources */,
 				4C2168961B02F3E500318AEB /* YourRelationshipViewController.m in Sources */,
 				4C1B321C1AAFDF9700C20C73 /* NameViewController.m in Sources */,
+				4C5B64491B6D5440008E4B2F /* CCClient.m in Sources */,
 				4C88798D1B043B6E00D56F67 /* HIPAAViewController.m in Sources */,
 				4C8879871B043B3E00D56F67 /* MenuViewController.m in Sources */,
 			);
@@ -551,6 +636,7 @@
 		};
 		4C1B31F11AAFA82200C20C73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAFEEBF360127292CE4BC9EE /* Pods-ClearClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -562,6 +648,7 @@
 		};
 		4C1B31F21AAFA82200C20C73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F242288A465E2F4CA105054 /* Pods-ClearClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
