@@ -8,6 +8,9 @@
 
 #import "DigitalSignViewController.h"
 #import "AppController.h"
+#import "SalesForceController.h"
+#import "BoxController.h"
+#import "CCClient.h"
 
 @interface DigitalSignViewController ()
 @property (strong, nonatomic) NSData *signature;
@@ -78,8 +81,20 @@
 }
 
 #pragma mark SignatureViewController delegate methods
-- (void)didSign:(NSData *)signatureData; {
-    NSLog(@"signatureData: %@",signatureData.description);
+- (void)didSign:(NSData *)signatureData {
+    //NSLog(@"signatureData: %@",signatureData.description);
+    //CCClient *client = [[SalesForceController sharedManager] currentClient];
+    
+    [[[SalesForceController sharedManager] currentClient] setSignature:signatureData];
+    [[SalesForceController sharedManager] uploadSignature];
+
+    
+    //CCClient *client = CCClient.new;
+    //client.signature = signatureData;
+    
+    
+    //[[BoxController sharedManager] uploadClientSignatureToBox:client];
+    
 }
 
 /*

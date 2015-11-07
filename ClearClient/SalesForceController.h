@@ -26,6 +26,7 @@ extern NSString *SFClientCreateFailureNotification;
 - (void)createNewClient;
 - (void)updateClient;
 - (void)getClients;
+- (void)uploadSignature;
 
 + (id)sharedManager;
 

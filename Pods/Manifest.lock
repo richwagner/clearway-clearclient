@@ -1,0 +1,92 @@
+PODS:
+  - box-ios-sdk (1.0.9):
+    - box-ios-sdk/logger (= 1.0.9)
+    - box-ios-sdk/no-arc (= 1.0.9)
+  - box-ios-sdk/logger (1.0.9)
+  - box-ios-sdk/no-arc (1.0.9):
+    - box-ios-sdk/logger
+  - CHDropDownTextField (1.0.0)
+  - IQDropDownTextField (1.0.6)
+  - IQKeyboardManager (3.2.4)
+  - SalesforceMobileSDK-iOS (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceNetwork (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceOAuth (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceRestAPI (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SalesforceSecurity (= 3.3.0)
+    - SalesforceMobileSDK-iOS/SmartSync (= 3.3.0)
+  - SalesforceMobileSDK-iOS/SalesforceCommonUtils (3.3.0)
+  - SalesforceMobileSDK-iOS/SalesforceNetwork (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+    - SQLCipher/fts (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceOAuth (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+  - SalesforceMobileSDK-iOS/SalesforceRestAPI (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceNetwork
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+    - SQLCipher/fts (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceSDKCommon (3.3.0)
+  - SalesforceMobileSDK-iOS/SalesforceSDKCore (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+    - SQLCipher/fts (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceSecurity (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+  - SalesforceMobileSDK-iOS/SmartSync (3.3.0):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceNetwork
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceRestAPI
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+    - SQLCipher/fts (~> 3.1)
+  - SHEmailValidator (1.0.3)
+  - SHSPhoneComponent (2.15)
+  - SQLCipher (3.1.0):
+    - SQLCipher/standard (= 3.1.0)
+  - SQLCipher/common (3.1.0)
+  - SQLCipher/fts (3.1.0):
+    - SQLCipher/common
+  - SQLCipher/standard (3.1.0):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - box-ios-sdk
+  - CHDropDownTextField (~> 1.0)
+  - IQDropDownTextField
+  - IQKeyboardManager
+  - SalesforceMobileSDK-iOS
+  - SHEmailValidator
+  - SHSPhoneComponent
+
+SPEC CHECKSUMS:
+  box-ios-sdk: 5633fbcc8f1ef70fe897bcbdfab253e3ddf69b9c
+  CHDropDownTextField: d8a2843acbdd75b5b8d26b27dca9e07c2b1ae5e1
+  IQDropDownTextField: 361e4a4ea879c4ed0c15cbd89aceb5e60aa19d33
+  IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  SalesforceMobileSDK-iOS: d76a67c86ff5241d9c15a3988fadc70f81ad53da
+  SHEmailValidator: a32815b360bd862d44170883b3b088d8fb7a39e0
+  SHSPhoneComponent: 4cec0653a150ad63cbc52b0c8b29ce2d3c9c26f0
+  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+
+COCOAPODS: 0.38.2

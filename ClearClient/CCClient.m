@@ -18,17 +18,46 @@
 // self.age, @"Age__c",
 //                                        self.homePhone, @"Home_phone__c",
 
-    NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:
-                                        self.firstName, @"First_Name__c",
-                                        self.lastName, @"Name",
-                                        self.city, @"City__c",
-                                        self.state, @"State__c",
-                                        self.address, @"Street_address__c",
-                                        self.mobilePhone, @"Cell_phone__c",
-                                        self.email, @"ClientEmail__c",
-                                        nil];
+    NSDictionary *result = nil;
+
+   result = [NSDictionary dictionaryWithObjectsAndKeys:
+                  self.firstName, @"First_Name__c",
+                  self.lastName, @"Name",
+                  self.city, @"City__c",
+                  self.state, @"State__c",
+                  self.address, @"Street_address__c",
+                  self.mobilePhone, @"Cell_phone__c",
+                  self.email, @"ClientEmail__c",
+                  nil];
+ 
     return result;
 }
+
+- (NSDictionary*)signatureDict {
+    
+    //"<img src=\"data:image/jpeg; base64," + encodedImage + "></img>")
+    
+    //<img alt="<image_Name>" src="data:image/<image_File_Extension>;base64, <base64_Image_String>"></img>
+   // http://developer.force.com/cookbook/recipe/converting-a-rich-text-area-fields-image-for-api-upload
+   //http://www.askapache.com/online-tools/base64-image-converter/
+     //http://salesforcetrick.blogspot.com/2013/06/converting-rich-text-area-fields-image.html
+    
+    NSDictionary *result = nil;
+
+    //NSString *sig = [NSString stringWithFormat:@"<img  alt=\"Home Pict\" src=\"data:image/jpeg;base64, %@\"\\>", [self.signature base64EncodedStringWithOptions:0]];
+
+    NSString *sig = [NSString stringWithFormat:@"<img src=\"data:image/png;base64,%@\" />",[self.signature base64EncodedStringWithOptions:0]];
+
+
+    if (self.signature) {
+        result = [NSDictionary dictionaryWithObjectsAndKeys:
+                  sig, @"signature__c",
+                  nil];
+    }
+
+    return result;
+}
+
 
 - (NSString*)sfBirthDate {
     return [SFDateUtil toSOQLDateTimeString:self.birthDate isDateTime:true];

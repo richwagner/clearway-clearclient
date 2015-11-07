@@ -17,6 +17,9 @@ extern NSString *const NAV_TEXT_COLOR;
 @interface YouViewController : UIViewController <UIScrollViewDelegate, IQDropDownTextFieldDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UISwitch *inSchoolSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *inSchoolLabel;
+
 
 @property (nonatomic, retain) IBOutlet UIView *step1View;
 @property (nonatomic, retain) IBOutlet UIView *step2View;

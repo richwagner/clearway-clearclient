@@ -25,8 +25,9 @@
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *homePhone;
 @property (nonatomic, strong) NSString *mobilePhone;
+@property (nonatomic, strong) NSData *signature;
 
-
+- (NSDictionary*)signatureDict;
 - (NSDictionary*)dictFromClient;
 
 @end

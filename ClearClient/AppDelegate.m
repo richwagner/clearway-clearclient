@@ -13,10 +13,15 @@
 #import <SalesforceSDKCore/SalesforceSDKManager.h>
 #import <SalesforceSDKCore/SFUserAccountManager.h>
 #import <SalesforceCommonUtils/SFLogger.h>
+#import <BoxContentSDK/BOXContentSDK.h>
 
 // Fill these in when creating a new Connected Application on Force.com
 static NSString * const RemoteAccessConsumerKey = @"3MVG9xOCXq4ID1uF5w4jpxHwd7GazxRziQO5VlsM6kJ9szK1ez3azJ1nc21cXWTj7xCkGZF7m.uMOWdSBSarW";
 static NSString * const OAuthRedirectURI        = @"sfdc://success"; //@"testsfdc:///mobilesdk/detect/oauth/done";
+
+static NSString * const BoxClientID = @"unefywhe62v13xix7urc7j75qgw4hwhp";
+static NSString * const BoxSecretKey = @"hOjyCBfZCWifBqNispmbkWNijTx7PESz";
+
 
 @interface AppDelegate ()
 /**
@@ -77,6 +82,14 @@ static NSString * const OAuthRedirectURI        = @"sfdc://success"; //@"testsfd
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[SalesforceSDKManager sharedManager] launch];
+    [BOXContentClient setClientID:BoxClientID clientSecret:BoxSecretKey];
+    
+    [[BOXContentClient defaultClient] authenticateWithCompletionBlock:^(BOXUser *user, NSError *error) {
+        if (error == nil) {
+            NSLog(@"Logged in user: %@", user.login);
+        }
+    }]; 
+    
     return YES;
 }
 

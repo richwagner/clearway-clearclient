@@ -9,6 +9,7 @@
 #import "SalesForceController.h"
 #import "CCClient.h"
 #import <SFRestAPI.h>
+#import <SFRestAPI+Files.h>
 #import <SFRestRequest.h>
 #import <SFDateUtil.h>
 
@@ -62,6 +63,18 @@ static SalesForceController *sharedApp = nil;
         [[SFRestAPI sharedInstance] send:request delegate:self];
     }
 }
+
+
+- (void)uploadSignature {
+    if (self.currentClient) {
+        NSDictionary *dict = [self.currentClient signatureDict];
+        NSString *objectId = self.currentClient.objectId;
+        self.state = SFStateUpdateClient;
+        SFRestRequest *request = [[SFRestAPI sharedInstance] requestForUpdateWithObjectType:@"Clients__c" objectId:objectId fields:dict];
+        [[SFRestAPI sharedInstance] send:request delegate:self];
+    }
+}
+
 
 - (void)getClients {
     SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT First_Name__c, Name FROM Clients__c LIMIT 100"];

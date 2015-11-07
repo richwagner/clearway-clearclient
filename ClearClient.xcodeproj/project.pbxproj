@@ -40,6 +40,7 @@
 		4C2168991B02F3F700318AEB /* YourIntentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2168981B02F3F700318AEB /* YourIntentionViewController.m */; };
 		4C2326DC1B84069A00567D33 /* CCCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2326DB1B84069A00567D33 /* CCCase.m */; };
 		4C5B64491B6D5440008E4B2F /* CCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B64481B6D5440008E4B2F /* CCClient.m */; };
+		4C7AE2811B88E2C900822C5F /* BoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7AE2801B88E2C900822C5F /* BoxController.m */; };
 		4C8879871B043B3E00D56F67 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8879861B043B3E00D56F67 /* MenuViewController.m */; };
 		4C88798A1B043B5B00D56F67 /* ApproveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8879891B043B5B00D56F67 /* ApproveViewController.m */; };
 		4C88798D1B043B6E00D56F67 /* HIPAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C88798C1B043B6E00D56F67 /* HIPAAViewController.m */; };
@@ -111,6 +112,8 @@
 		4C2326DB1B84069A00567D33 /* CCCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCase.m; sourceTree = "<group>"; };
 		4C5B64471B6D5440008E4B2F /* CCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClient.h; sourceTree = "<group>"; };
 		4C5B64481B6D5440008E4B2F /* CCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClient.m; sourceTree = "<group>"; };
+		4C7AE27F1B88E2C900822C5F /* BoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxController.h; sourceTree = "<group>"; };
+		4C7AE2801B88E2C900822C5F /* BoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxController.m; sourceTree = "<group>"; };
 		4C8879851B043B3E00D56F67 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		4C8879861B043B3E00D56F67 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		4C8879881B043B5B00D56F67 /* ApproveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApproveViewController.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				4C04704C1B07B2A800A6E316 /* AppController.m */,
 				4CE22D2A1B47365A00594391 /* SalesForceController.h */,
 				4CE22D2B1B47365A00594391 /* SalesForceController.m */,
+				4C7AE27F1B88E2C900822C5F /* BoxController.h */,
+				4C7AE2801B88E2C900822C5F /* BoxController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				4C2168961B02F3E500318AEB /* YourRelationshipViewController.m in Sources */,
 				4C1B321C1AAFDF9700C20C73 /* NameViewController.m in Sources */,
 				4C5B64491B6D5440008E4B2F /* CCClient.m in Sources */,
+				4C7AE2811B88E2C900822C5F /* BoxController.m in Sources */,
 				4C88798D1B043B6E00D56F67 /* HIPAAViewController.m in Sources */,
 				4C8879871B043B3E00D56F67 /* MenuViewController.m in Sources */,
 			);
